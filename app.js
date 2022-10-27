@@ -18,25 +18,25 @@ const combinations = [
 
 ];
 
-// wrapper.dataset.configuration = combinations[0].configuration;
-// wrapper.dataset.roundness = combinations[0].roundness
-// let index = 1;
+wrapper.dataset.configuration = combinations[0].configuration;
+wrapper.dataset.roundness = combinations[0].roundness
+let index = 1;
 
 
-// setInterval(() => {
+setInterval(() => {
 
-//   let combination = combinations[index];
+  let combination = combinations[index];
   
-//   wrapper.dataset.configuration = combination.configuration;
-//   wrapper.dataset.roundness = combination.roundness;
-//   console.log(index)
-//   index ++;
-//   if (index == 5) {
-//     index = 0
-//   }
-// }, 4000);
+  wrapper.dataset.configuration = combination.configuration;
+  wrapper.dataset.roundness = combination.roundness;
+  console.log(index)
+  index ++;
+  if (index == 5) {
+    index = 0
+  }
+}, 4000);
 
 // Opcja statyczna
-let index = 0;
-wrapper.dataset.configuration = combinations[index].configuration;
-wrapper.dataset.roundness = combinations[index].roundness
+// let index = 1;
+// wrapper.dataset.configuration = combinations[index].configuration;
+// wrapper.dataset.roundness = combinations[index].roundness

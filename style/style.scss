@@ -53,6 +53,9 @@ html{
       text-align: right;
     }
   }
+  .design {
+    display: none;
+  }
 
   // #wrapper[data-configuration="5"]>h1 {
   //   transform: translateX(2ch);
@@ -82,6 +85,7 @@ html{
     transition: left, top, height, width, border-radius, background-color;
     transition-duration: 2.5s;
     transition-timing-function: ease-in-out;
+    overflow: hidden;
   }
   
   #wrapper>.shape:nth-child(1) {
@@ -557,12 +561,58 @@ html{
 
 
     //ELEMENTS
-    @keyframes top_in_out {
-      0%   {transform: translate(0, 20vmin);}
-      25%  {transform: translate(0)}
-      90%  {transform: translate(0)}
-      100% {transform: translate(0, 20vmin)}
+    @keyframes top_in_out_1 {
+      0% {top: -200%;}
+      10%  {top: 10%;}
+      90%  {top: 10%;}
+      100% {top: -100%;}
+    }
+    @keyframes top_in_out_2 {
+      0% {top: -200%;}
+      10%  {top: 5%;}
+      90%  {top: 5%;}
+      100% {top: -100%;}
     }
         
+  #wrapper[data-configuration="1"] > .shape:nth-child(2) {
+    overflow: hidden;
+    .cloud {
+      display: block;
+      width: 80%;
+      height: 80%;
+      position: relative;
+      left: 10%;
+      top: -200%;
+      background-image: url(../img/think.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      animation: top_in_out_1 4s forwards;
+    }
+  }
+  #wrapper[data-configuration="2"] > .shape:nth-child(3) {
+    .design{
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      position: relative;
+      left: 5%;
+      top: -200%;
+      animation: top_in_out_2 2.5s forwards;
+      animation-delay: 1.5s;
+      font-size: 2vmin;
+      color: #222222;
 
-        
+      div{
+        display: inline-flex;
+        align-items: center;
+        gap: 1vmin;
+        margin-bottom: 1vmin;
+        img {
+          height: 4vmin;
+          width: 4vmin;
+        }
+      }
+
+    }
+  }
