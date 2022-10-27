@@ -17,10 +17,10 @@ const combinations = [
   { configuration: 5, roundness: 3 }
 
 ];
-let index = 4;
-wrapper.dataset.configuration = combinations[index].configuration;
-wrapper.dataset.roundness = combinations[index].roundness
 
+// wrapper.dataset.configuration = combinations[0].configuration;
+// wrapper.dataset.roundness = combinations[0].roundness
+// let index = 1;
 
 
 // setInterval(() => {
@@ -35,3 +35,8 @@ wrapper.dataset.roundness = combinations[index].roundness
 //     index = 0
 //   }
 // }, 4000);
+
+// Opcja statyczna
+let index = 0;
+wrapper.dataset.configuration = combinations[index].configuration;
+wrapper.dataset.roundness = combinations[index].roundness
