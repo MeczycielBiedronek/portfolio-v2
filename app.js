@@ -37,6 +37,6 @@ setInterval(() => {
 }, 4000);
 
 // Opcja statyczna
-// let index = 1;
+// let index = 3;
 // wrapper.dataset.configuration = combinations[index].configuration;
 // wrapper.dataset.roundness = combinations[index].roundness
