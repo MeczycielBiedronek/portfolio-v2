@@ -44,6 +44,6 @@ setInterval(() => {
 // wrapper.dataset.configuration = combinations[index].configuration;
 // wrapper.dataset.roundness = combinations[index].roundness
 
-intro.addEventListener('click', ()=> {
-  intro.setAttribute('status', 'off')
-})
+// intro.addEventListener('click', ()=> {
+//   intro.setAttribute('status', 'off')
+// })
