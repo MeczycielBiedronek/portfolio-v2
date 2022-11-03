@@ -34,7 +34,7 @@ setInterval(() => {
   index ++;
   if (index == 5) {
     index = 0
-    skip.style.color = "#333333"
+    // skip.style.color = "#333333"
     // skip.innerHTML = "next"
   }
 }, 4000);
