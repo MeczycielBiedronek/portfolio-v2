@@ -22,6 +22,23 @@ body {
   overflow-y: scroll;
 }
 
+h2 {
+  font-size: 7vmin;
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  max-width: 80%;
+  font-size: 4vmin;
+  font-weight: 400;
+}
+
+p {
+  max-width: 80%;
+  font-size: 2vmin;
+}
+
 main nav {
   position: -webkit-sticky;
   position: sticky;
@@ -85,6 +102,51 @@ section.intro[status="off"] {
           transform: translateX(-100%);
 }
 
+.items_title {
+  color: #818181;
+  display: inline-block;
+  border-bottom: 1px solid #b3b3b3;
+  width: 15em;
+}
+
+.items_icons {
+  padding: 1em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.items_icons .item_icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  font-size: 0.7em;
+  font-weight: 600;
+  color: #acacac;
+}
+
+.items_icons .item_icon:hover {
+  color: #222222;
+}
+
+.items_icons .item_icon img {
+  display: inline-block;
+  height: 4.5em;
+  padding: 0 0.6em 0.2em;
+  position: relative;
+}
+
 section.work {
   position: relative;
 }
@@ -125,49 +187,6 @@ section.work .top h3, section.work .bottom h3 {
   padding: 0.3em 1em;
   -webkit-box-shadow: 0.5em 0.5em #818181;
           box-shadow: 0.5em 0.5em #818181;
-}
-
-section.work .top .items_title, section.work .bottom .items_title {
-  color: #818181;
-  display: inline-block;
-  border-bottom: 1px solid #b3b3b3;
-  width: 15em;
-}
-
-section.work .top .items_icons, section.work .bottom .items_icons {
-  padding: 1em 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-section.work .top .items_icons .item_icon, section.work .bottom .items_icons .item_icon {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  text-align: center;
-  font-size: 0.7em;
-  font-weight: 600;
-  color: #acacac;
-}
-
-section.work .top .items_icons .item_icon:hover, section.work .bottom .items_icons .item_icon:hover {
-  color: #222222;
-}
-
-section.work .top .items_icons .item_icon img, section.work .bottom .items_icons .item_icon img {
-  display: inline-block;
-  max-height: 4.5em;
-  padding: 0 0.6em 0.2em;
-  position: relative;
 }
 
 section.work .top {
@@ -276,31 +295,6 @@ section.contact .wrap {
           justify-content: center;
 }
 
-section.life_hero .wrap h2,
-section.life_achievements .wrap h2,
-section.life_tv .wrap h2,
-section.life_kids .wrap h2,
-section.contact .wrap h2 {
-  font-size: 7vmin;
-}
-
-section.life_hero .wrap h3,
-section.life_achievements .wrap h3,
-section.life_tv .wrap h3,
-section.life_kids .wrap h3,
-section.contact .wrap h3 {
-  font-size: 5vmin;
-  font-weight: 400;
-}
-
-section.life_hero .wrap p,
-section.life_achievements .wrap p,
-section.life_tv .wrap p,
-section.life_kids .wrap p,
-section.contact .wrap p {
-  max-width: 80%;
-}
-
 section.life_hero .wrap .left, section.life_hero .wrap .right,
 section.life_achievements .wrap .left,
 section.life_achievements .wrap .right,
@@ -338,8 +332,57 @@ section.life_hero .wrap .right {
           box-shadow: inset 0 0 0 50vw rgba(0, 0, 0, 0.7);
 }
 
-section.life_achievements .wrap .left, section.life_achievements .wrap .right {
-  width: 50%;
+section.life_achievements .wrap .right {
+  background-image: url(../img/peru.jpg);
+  background-size: cover;
+  background-position-y: bottom;
+  background-position-x: center;
+}
+
+section.life_achievements .wrap .left .items_title {
+  width: 80%;
+}
+
+section.life_achievements .wrap .left .items_icons {
+  width: 80%;
+  gap: 2vmin;
+}
+
+section.life_achievements .wrap .left .items_icons .item_icon span {
+  width: 100%;
+}
+
+section.life_tv .wrap .left {
+  background-image: url(../img/radio.jpg);
+  background-size: cover;
+  background-position-y: bottom;
+  background-position-x: 20%;
+}
+
+section.life_tv .wrap .right {
+  color: #fff;
+  background-color: #90081C;
+}
+
+section.life_kids .wrap .right {
+  background-image: url(../img/kids.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: top;
+  background-position-x: center;
+}
+
+section.life_kids .wrap .left {
+  background-color: #fff;
+}
+
+section.contact {
+  min-height: 50vh;
+  background-color: #90081C;
+}
+
+section.contact .wrap .right form {
+  color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -355,10 +398,179 @@ section.life_achievements .wrap .left, section.life_achievements .wrap .right {
           align-items: center;
 }
 
-section.life_achievements .wrap .right {
-  background-image: url(../img/peru.jpg);
-  background-size: cover;
-  background-position-y: bottom;
-  background-position-x: center;
+section.contact .wrap .right form input {
+  all: unset;
+  border: 2px solid white;
+  padding: 0.6em;
+  width: 80%;
+  -webkit-box-shadow: 1em 1em #fff;
+          box-shadow: 1em 1em #fff;
+}
+
+section.contact .wrap .right form input[type="submit"] {
+  text-align: right;
+  -webkit-box-shadow: 1em 1em #fff, 1em 0 #fff;
+          box-shadow: 1em 1em #fff, 1em 0 #fff;
+  background-color: #90081C;
+  cursor: pointer;
+}
+
+section.contact .wrap .right form input[type="submit"]:hover {
+  background-color: #fff;
+  color: #90081C;
+  -webkit-box-shadow: inset 0 -4px #90081C, 1em 1em #fff, 1em 0 #fff;
+          box-shadow: inset 0 -4px #90081C, 1em 1em #fff, 1em 0 #fff;
+}
+
+section.contact .wrap .right form textarea {
+  all: unset;
+  margin-top: 3em;
+  border: 2px solid white;
+  padding: 0.6em;
+  width: 80%;
+  -webkit-box-shadow: 1em 1em #fff;
+          box-shadow: 1em 1em #fff;
+}
+
+section.contact .wrap .left {
+  padding-top: 4em;
+  color: #fff;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+section.contact .wrap .left h3 {
+  margin: 0;
+  padding: 0;
+  max-width: 80%;
+}
+
+section.contact .wrap .left p {
+  margin-top: 0;
+  max-width: 80%;
+}
+
+section.contact .wrap .left p::after {
+  content: "on the right.";
+}
+
+section.contact .wrap .left span {
+  text-align: right;
+  width: 80%;
+  font-size: 4em;
+}
+
+@media screen and (max-width: 950px) {
+  h3 {
+    font-size: 1.5em;
+  }
+  p {
+    font-size: 1em;
+    max-width: unset;
+  }
+  main nav {
+    margin: 0;
+    background-color: #ffffff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    display: flex;
+    padding-top: 0;
+  }
+  main nav .selected {
+    font-size: 2em;
+  }
+  main nav a {
+    font-size: 2em;
+    margin: 0;
+  }
+  section.work .lamp {
+    position: relative;
+    left: 5%;
+    width: 90%;
+    height: 50vh;
+    background-position-x: right;
+    background-position-y: 50%;
+  }
+  section.work .top, section.work .bottom {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section.work .top article, section.work .bottom article {
+    width: 80%;
+    padding: 1em 0;
+  }
+  section.work .top p, section.work .bottom p {
+    width: 100%;
+  }
+  section.life_hero,
+  section.life_achievements,
+  section.life_tv,
+  section.life_kids,
+  section.contact {
+    height: auto;
+  }
+  section.life_hero .wrap,
+  section.life_achievements .wrap,
+  section.life_tv .wrap,
+  section.life_kids .wrap,
+  section.contact .wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  section.life_hero .wrap .left, section.life_hero .wrap .right,
+  section.life_achievements .wrap .left,
+  section.life_achievements .wrap .right,
+  section.life_tv .wrap .left,
+  section.life_tv .wrap .right,
+  section.life_kids .wrap .left,
+  section.life_kids .wrap .right,
+  section.contact .wrap .left,
+  section.contact .wrap .right {
+    width: 100%;
+    height: auto;
+    min-height: 50vh;
+  }
+  section.life_hero .wrap .left h3, section.life_hero .wrap .left p, section.life_hero .wrap .right h3, section.life_hero .wrap .right p,
+  section.life_achievements .wrap .left h3,
+  section.life_achievements .wrap .left p,
+  section.life_achievements .wrap .right h3,
+  section.life_achievements .wrap .right p,
+  section.life_tv .wrap .left h3,
+  section.life_tv .wrap .left p,
+  section.life_tv .wrap .right h3,
+  section.life_tv .wrap .right p,
+  section.life_kids .wrap .left h3,
+  section.life_kids .wrap .left p,
+  section.life_kids .wrap .right h3,
+  section.life_kids .wrap .right p,
+  section.contact .wrap .left h3,
+  section.contact .wrap .left p,
+  section.contact .wrap .right h3,
+  section.contact .wrap .right p {
+    max-width: 90%;
+  }
+  section.contact .wrap .left {
+    min-height: auto;
+  }
+  section.contact .wrap .left p::after {
+    content: 'below.';
+  }
+  section.life_tv .wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
 }
 /*# sourceMappingURL=style.css.map */
