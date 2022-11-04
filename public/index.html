@@ -95,9 +95,9 @@ router.use(function (req, res, next) {
     </section>
     <main>
         <nav>
-            <a href="#work" class="selected">Work</a><br/>
-            <a href="#life">Life</a><br/>
-            <a href="#contact" style="text-decoration:none;">&#9993;</a><br/>
+            <a id="nav_work" href="#work" class="intro work selected">Work</a><br/>
+            <a id="nav_life" href="#life" class="life achievements radio" >Life</a><br/>
+            <a id="nav_mail" href="#contact" style="text-decoration:none;" class="kids contact">&#9993;</a><br/>
         </nav>
     <section class="work" id="work">
         <div class="lamp"></div>
@@ -179,7 +179,7 @@ Please continue to the video to watch my short walk-through of the project.
         </div>
      </div>
     </section>
-    <section class="life_achievements">
+    <section class="life_achievements" id="achievements">
           <div class="wrap">
         <div class="left">
 <h3>Achievements</h3>
@@ -222,7 +222,7 @@ Please continue to the video to watch my short walk-through of the project.
         </div>
      </div>
     </section>
-    <section class="life_tv">
+    <section class="life_tv" id="radio">
         <div class="wrap">
             <div class="left">
             </div>
@@ -233,7 +233,7 @@ Please continue to the video to watch my short walk-through of the project.
             </div>
          </div>
     </section>
-    <section class="life_kids">
+    <section id="kids" class="life_kids">
         <div class="wrap">
             <div class="left">
                 <h3>Free code camps for children</h3>
@@ -261,15 +261,67 @@ Please continue to the video to watch my short walk-through of the project.
 </p>
     </div>
     <div class="right">
-        <form action="">
-            <input type="email" name="email" placeholder="email">
-            <textarea name="mailcontent" id="mailcontent" cols="30" rows="5" placeholder="text"></textarea>
+        <form method="POST" action="send" id="form">
+            <input type="email" name="email" placeholder="email" required>
+            <textarea name="mailcontent" id="mailcontent" cols="30" rows="5" placeholder="text" required></textarea>
             <input type="submit" value="&#x279C send">
         </form>
     </div>
  </div>
     </section>
 </main>
-    </body>
-<script src="app.js"></script>
+    </body>  
+<script src="/js/animation.js"></script>
+<script>
+// const nav_work = document.getElementById("nav_work"),
+//     nav_life = document.getElementById("nav_life"),
+//     nav_mail = document.getElementById("nav_mail")
+// const observer = new IntersectionObserver(entries => {
+//   entries.forEach(entry => {
+//     if (entry.isIntersecting && entry.target.id=='life') {
+//         nav_work.classList.remove('selected')
+//         nav_life.classList.add('selected')
+//         nav_mail.classList.remove('selected')
+//     }
+//     if (entry.isIntersecting && entry.target.id=='work') {
+//         nav_work.classList.add('selected')
+//         nav_life.classList.remove('selected')
+//         nav_mail.classList.remove('selected')
+//     }
+//     if (entry.isIntersecting && entry.target.id=='contact') {
+//         nav_work.classList.remove('selected')
+//         nav_life.classList.remove('selected')
+//         nav_mail.classList.add('selected')
+//     }
+//   })
+// }
+// // ,{ threshold: 0.99 }
+// )
+
+// observer.observe(document.getElementById("life"))
+// observer.observe(document.getElementById("work"))
+// observer.observe(document.getElementById("contact"))
+
+const sections = document.querySelectorAll("section");
+const nava = document.querySelectorAll("nav a");
+window.onscroll = () => {
+  var current = "";
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    if (pageYOffset >= sectionTop - 60) {
+      current = section.getAttribute("id"); 
+    console.log(current)}
+  });
+
+  nava.forEach((a) => {
+    a.classList.remove("selected");
+    if (a.classList.contains(current)) {
+      a.classList.add("selected");
+    }
+  });
+};
+
+
+</script>
 </html>

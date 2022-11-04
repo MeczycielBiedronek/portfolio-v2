@@ -1,49 +1,65 @@
 "use strict"
-const wrapper = document.getElementById("wrapper");
-const intro = document.getElementById("intro");
-const shape = document.querySelectorAll(".shape");
-const skip = document.querySelector(".skip");
 
-// { configuration: 3, roundness: 3 }, // idea 1
-// { configuration: 1, roundness: 4 },
-// { configuration: 2, roundness: 2 },
-// { configuration: 1, roundness: 2 }, // develop 4
-// { configuration: 2, roundness: 3 }
+const express = require('express');
+const bodyParser = require('body-parser');
+const path = require('path');
+const nodemailer = require('nodemailer');
+const app = express();
+require('dotenv').config()
 
-const combinations = [
-  // { configuration: 1, roundness: 1 },
-  { configuration: 1, roundness: 3 }, // idea 1
-  { configuration: 2, roundness: 4 },
-  { configuration: 3, roundness: 2 },
-  { configuration: 4, roundness: 2 }, // develop 4
-  { configuration: 5, roundness: 5 }
+// Static folder
+app.use(express.static(__dirname + '/public'));
 
-];
+// Body Parser Middleware
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
-wrapper.dataset.configuration = combinations[0].configuration;
-wrapper.dataset.roundness = combinations[0].roundness
-let index = 1;
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname, 'public/index.html'));
+  });
 
+app.post('/send', (req, res) => {
+  const htmlToTxt = (html) => {
+    return html.replace(/<[^>]+>/g, '') // strips string from HTML tags
+ }
+  const output = `
+    <p>You have a new contact request</p>
+    <h3>Email: <a href="mailto:${req.body.email}">${req.body.email}</a></h3>
+    <h3>Message</h3>
+    <p>${req.body.mailcontent}</p>
+  `;
 
-setInterval(() => {
+  // create reusable transporter object using the default SMTP transport
+  let transporter = nodemailer.createTransport({
+    host: process.env.MAILER_HOST_NAME,
+    port: 465,
+    secure: true, // true for 465, false for other ports
+    auth: {
+        user: process.env.MAILER_EMAIL, // generated ethereal user
+        pass: process.env.MAILER_PASS // generated ethereal password
+    },
+    tls:{
+      rejectUnauthorized:false
+    }
+  });
 
-  let combination = combinations[index];
-  
-  wrapper.dataset.configuration = combination.configuration;
-  wrapper.dataset.roundness = combination.roundness;
-  index ++;
-  if (index == 5) {
-    index = 0
-    // skip.style.color = "#333333"
-    // skip.innerHTML = "next"
-  }
-}, 4000);
+  // setup email data with unicode symbols
+  let mailOptions = {
+      from: `"Wiadomość z PORTFOLIO" <${process.env.MAILER_EMAIL}>`, // sender address
+      to: process.env.MAIL_TO, // list of receivers
+      subject: 'Wiadomość z PORTFOLIO', // Subject line
+      text: htmlToTxt(output), // plain text output
+      html: output // html body
+  };
 
-// Opcja statyczna
-// let index = 4;
-// wrapper.dataset.configuration = combinations[index].configuration;
-// wrapper.dataset.roundness = combinations[index].roundness
+  // send mail with defined transport object
+  transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+          return console.log(error);
+      }
+      console.log('Message sent: %s', info.messageId);  
+      res.sendFile(path.join(__dirname, 'public/sent.html'));
+  });
+  });
 
-// intro.addEventListener('click', ()=> {
-//   intro.setAttribute('status', 'off')
-// })
+app.listen(5000, () => console.log('Server started...'));
