@@ -189,6 +189,14 @@ section.work .top h3, section.work .bottom h3 {
           box-shadow: 0.5em 0.5em #818181;
 }
 
+section.work .top a, section.work .bottom a {
+  color: #fff;
+}
+
+section.work .top a:hover, section.work .bottom a:hover {
+  color: orange;
+}
+
 section.work .top {
   background-color: #fff;
   color: #222222;

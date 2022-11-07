@@ -7,10 +7,7 @@ const nodemailer = require('nodemailer');
 const app = express();
 require('dotenv').config()
 
-// Static folder
 app.use(express.static(__dirname + '/public'));
-
-// Body Parser Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -35,8 +32,8 @@ app.post('/send', (req, res) => {
     port: 465,
     secure: true, // true for 465, false for other ports
     auth: {
-        user: process.env.MAILER_EMAIL, // generated ethereal user
-        pass: process.env.MAILER_PASS // generated ethereal password
+        user: process.env.MAILER_EMAIL,
+        pass: process.env.MAILER_PASS
     },
     tls:{
       rejectUnauthorized:false
