@@ -20,5 +20,6 @@ setInterval(() => {
   index ++;
   if (index == 5) {
     index = 0
+    skip.style.color = 'grey'
   }
 }, 4000);

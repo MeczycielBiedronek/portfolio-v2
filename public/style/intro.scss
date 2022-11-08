@@ -830,6 +830,7 @@ background-color: #adadad;
     }
   }
   .skip {
+    transition: all 0.5s;
     display: block;
     width: 90vmin;
     text-align: right;
@@ -838,4 +839,8 @@ background-color: #adadad;
     color: #dddddd;
     transition: all 1s;
     cursor: pointer;
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
   }

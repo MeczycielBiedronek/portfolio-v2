@@ -1118,6 +1118,8 @@
 }
 
 .skip {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
   display: block;
   width: 90vmin;
   text-align: right;
@@ -1127,5 +1129,10 @@
   -webkit-transition: all 1s;
   transition: all 1s;
   cursor: pointer;
+}
+
+.skip a {
+  text-decoration: none;
+  color: inherit;
 }
 /*# sourceMappingURL=intro.css.map */
