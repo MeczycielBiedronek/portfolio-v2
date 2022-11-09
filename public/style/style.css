@@ -235,42 +235,6 @@ section.work .bottom .video, section.work .top .video {
   position: relative;
 }
 
-section.work .bottom .video::after, section.work .top .video::after {
-  color: #222222;
-  font-size: 3vw;
-  text-align: center;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  content: "\25BA";
-  display: block;
-  background-color: #fff;
-  position: absolute;
-  aspect-ratio: 1;
-  padding: 0 0.8vw 0 1vw;
-  top: 30%;
-  left: 37%;
-}
-
-section.work .bottom .video img, section.work .top .video img {
-  width: 100%;
-  opacity: 0.5;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-section.work .bottom .video img:hover, section.work .top .video img:hover {
-  opacity: 1;
-}
-
-section.work .bottom .video:hover::after, section.work .top .video:hover::after {
-  color: #ffffff;
-  background-color: #222222;
-}
-
-section.work .bottom .video:hover img, section.work .top .video:hover img {
-  opacity: 1;
-}
-
 section.life_hero,
 section.life_achievements,
 section.life_tv,

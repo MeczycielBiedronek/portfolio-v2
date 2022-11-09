@@ -175,39 +175,39 @@ transform: translateX(-100%);
         padding: 1em 0;
         position: relative;
         
-        &::after {
-          color: #222222;
-          font-size: 3vw;
-          text-align: center;
-          transition: all 0.5s;
-          content: "\25BA";
-          display: block;
-          background-color: #fff;
-          position: absolute;
-          // width: 30%;
-          aspect-ratio: 1;
-          padding: 0 0.8vw 0 1vw;
-          top: 30%;
-          left: 37%;
-        }
-        img {
-          width: 100%;
-          opacity: 0.5;
-          transition: all 0.5s;
-          &:hover {
-            opacity: 1;
-          }
-        }
+        // &::after {
+        //   color: #222222;
+        //   font-size: 3vw;
+        //   text-align: center;
+        //   transition: all 0.5s;
+        //   content: "\25BA";
+        //   display: block;
+        //   background-color: #fff;
+        //   position: absolute;
+        //   // width: 30%;
+        //   aspect-ratio: 1;
+        //   padding: 0 0.8vw 0 1vw;
+        //   top: 30%;
+        //   left: 37%;
+        // }
+        // img {
+        //   width: 100%;
+        //   opacity: 0.5;
+        //   transition: all 0.5s;
+        //   &:hover {
+        //     opacity: 1;
+        //   }
+        // }
       }
-      .video:hover {
-        &::after{
-          color: #ffffff;
-          background-color: #222222;
-        }
-        img {
-          opacity: 1;
-        }
-      }
+      // .video:hover {
+      //   &::after{
+      //     color: #ffffff;
+      //     background-color: #222222;
+      //   }
+      //   img {
+      //     opacity: 1;
+      //   }
+      // }
     }
   }
   section.life_hero,
