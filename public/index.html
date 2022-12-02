@@ -270,9 +270,7 @@ Please continue to the video to watch my short walk-through of the project.
         <form method="POST" action="send" id="form">
             <input type="email" name="email" placeholder="email" required>
             <textarea name="mailcontent" id="mailcontent" cols="30" rows="5" placeholder="text" required></textarea>
-            <input id="send_message" type="submit" value="&#x279C send" disabled="true">
-            <!-- A1QT46EVLO9348LMO9HH1DB086QDHVNP636TNISNTH788UCJFHSB1DM8U1 -->
-            <!--  -->
+            <input id="send_message" type="submit" value="&#x279C send" disabled />
             <div class="frc-captcha catpcha-ex" data-sitekey="FCMR9QN2SA9AC32D" data-callback="myCallback" name="asd"></div>
         </form>
     </div>
@@ -283,10 +281,8 @@ Please continue to the video to watch my short walk-through of the project.
     <script>
         const sub = document.getElementById('send_message')
         function myCallback(solution) {
-            if (!solution) {
-                return 
-            }
-            sub.removeAttribute('disabled')
+            if (!solution) {return 
+            }sub.removeAttribute('disabled')
         }
         </script>
 <script src="/js/animation.js"></script>
