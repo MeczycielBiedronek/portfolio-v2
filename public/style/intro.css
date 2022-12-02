@@ -436,7 +436,7 @@
 #wrapper[data-configuration="5"] > .shape .git_chain-join {
   background-image: url(../img/git_chain_element_bot_right.webp);
   background-position-y: top;
-  background-position-x: right 0.075vmin;
+  background-position-x: right 10%;
   height: 8vmin;
   background-repeat: no-repeat;
   background-size: 3.5vmin;

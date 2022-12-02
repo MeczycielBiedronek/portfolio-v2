@@ -4,10 +4,10 @@ const intro = document.getElementById("intro");
 const shape = document.querySelectorAll(".shape");
 const skip = document.querySelector(".skip");
 const combinations = [
-  { configuration: 1, roundness: 3 }, 
-  { configuration: 2, roundness: 4 },
-  { configuration: 3, roundness: 2 },
-  { configuration: 4, roundness: 2 },
+  // { configuration: 1, roundness: 3 }, 
+  // { configuration: 2, roundness: 4 },
+  // { configuration: 3, roundness: 2 },
+  // { configuration: 4, roundness: 2 },
   { configuration: 5, roundness: 5 }
 ];
 wrapper.dataset.configuration = combinations[0].configuration;

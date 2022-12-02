@@ -328,6 +328,9 @@ background-color: #fff;
             // box-shadow: 0.5em 0.5em #90081C, -1em -1em #fff, 1em 1em #fff, 1em 0 #fff;
           }
         }
+        input:disabled {
+          background-color: #818181;
+        }
         textarea {
           all: unset;
           margin-top: 3em;
@@ -336,6 +339,12 @@ background-color: #fff;
           width: 80%;
           box-shadow: 1em 1em #fff;
         }
+        .catpcha-ex {
+              width: 100%;
+              max-width: 84%;
+              margin-top: 3vmin;
+         }
+
       }
      }
      .left {

@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="style/style.css">
+    <script type="module" src="https://unpkg.com/friendly-challenge@0.9.8/widget.module.min.js" async defer></script>
     <title>Filip Wojtaszek portfolio</title>
 </head>
 <body>
@@ -167,9 +168,9 @@ Please continue to the video to watch my short walk-through of the project.
                 <!-- <img src="/img/clipping-online.webp" alt="clipping-online.com"> -->
                 <div style="padding:56.22% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/768944811?h=5fa9e3de2c&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="New Recording - 9.11.2022, 12:33:02"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
             </div>
-            <br/><a href="http://clipping-online.com">website </a>
+            <br/><a href="http://clipping-online.com" target="_blank">website </a>
                          |
-                         <a href="#"> github</a>
+                         <a href="https://github.com/MeczycielBiedronek/clipping-online_com" target="_blank"> github</a>
                          
             </article>
         </div>
@@ -269,13 +270,25 @@ Please continue to the video to watch my short walk-through of the project.
         <form method="POST" action="send" id="form">
             <input type="email" name="email" placeholder="email" required>
             <textarea name="mailcontent" id="mailcontent" cols="30" rows="5" placeholder="text" required></textarea>
-            <input type="submit" value="&#x279C send">
+            <input id="send_message" type="submit" value="&#x279C send" disabled="true">
+            <!-- A1QT46EVLO9348LMO9HH1DB086QDHVNP636TNISNTH788UCJFHSB1DM8U1 -->
+            <!--  -->
+            <div class="frc-captcha catpcha-ex" data-sitekey="FCMR9QN2SA9AC32D" data-callback="myCallback" name="asd"></div>
         </form>
     </div>
  </div>
     </section>
 </main>
     </body>  
+    <script>
+        const sub = document.getElementById('send_message')
+        function myCallback(solution) {
+            if (!solution) {
+                return 
+            }
+            sub.removeAttribute('disabled')
+        }
+        </script>
 <script src="/js/animation.js"></script>
 <script>
 const sections = document.querySelectorAll("section");
@@ -287,7 +300,7 @@ window.onscroll = () => {
     const sectionTop = section.offsetTop;
     if (pageYOffset >= sectionTop - 60) {
       current = section.getAttribute("id"); 
-    console.log(current)}
+    }
   });
 
   nava.forEach((a) => {
